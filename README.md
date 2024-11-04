@@ -13,7 +13,7 @@
 
 ## Description
 
-- This project sets up an ETL (Extract, Transform, Load) pipeline with a schedule that pulls weather data from a public Weather API and stores it in a PostgreSQL database. The pipeline is orchestrated using Apache Airflow, allowing for scheduled and reliable data processing. It uses airflow, so it is effectively a use case of batch data processing.
+- This project sets up an ETL (Extract, Transform, Load) pipeline with a schedule that pulls weather data from a public Weather API and stores it in a PostgreSQL database. The pipeline is orchestrated using Apache Airflow, allowing for scheduled and reliable data processing. It uses airflow, so it is effectively a use case of batch data processing. The data is processed using a logic defined in DAG task which are orchestrated using Airflow, so that it can be used further for reporting purposes.
 
 ## Features
 
