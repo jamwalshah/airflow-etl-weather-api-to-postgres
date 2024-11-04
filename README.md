@@ -105,19 +105,19 @@
     - **Add an HTTP connection**
         - Use the following configuration in the form and save
   
-            `Connection Id`: < Value of `API_CONN` in .env >
-            `Connection Type`: `HTTP`
+            `Connection Id`: < Value of `API_CONN` in .env >\
+            `Connection Type`: `HTTP`\
             `Host`: [`https://api.open-meteo.com/`](https://api.open-meteo.com/)
 
     - **Add a PostgreSQL connection**
         - Use the following configuration in the form and save
 
-            `Connection Id`: < Value of `AWS_RDS_CONN` from .env >
-            `Connection Type`: `Postgres`
-            `Host`: < Value of `AWS_RDS_HOST` from .env >
-            `Database`: < Value of `DATABASE_NAME` from .env >
-            `Login`: < Value of DB_`USER`from .env >
-            `Password`: < Value of DB_`PASSWORD` from .env >
+            `Connection Id`: < Value of `AWS_RDS_CONN` from .env >\
+            `Connection Type`: `Postgres`\
+            `Host`: < Value of `AWS_RDS_HOST` from .env >\
+            `Database`: < Value of `DATABASE_NAME` from .env >\
+            `Login`: < Value of DB_`USER`from .env >\
+            `Password`: < Value of DB_`PASSWORD` from .env >\
             `Port`: `5432`
 
     > Optionally, you can also configure to dump the output into Postgres database on other services such as `Azure Database for Postgres` or a `Postgres database as docker container`
