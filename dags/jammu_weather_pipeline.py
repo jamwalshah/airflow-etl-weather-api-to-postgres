@@ -5,6 +5,7 @@ from airflow.decorators import task
 from airflow.providers.http.hooks.http import HttpHook
 import requests
 from airflow.providers.postgres.hooks.postgres import PostgresHook
+from datetime import timedelta
 
 ## Location params
 JAMMU = {# 'timezone':'IST',
@@ -33,7 +34,9 @@ AZ_POSTGRES_CONN_ID = config('AZ_POSTGRES_CONN')
 ## DAG default args
 dag_default_args = {
     'owner':'airflow',
-    'start_date':days_ago(n=1)
+    'start_date':days_ago(n=1),
+    'retries':3, # will try for upto 3 retries
+    'retry_delay':timedelta(minutes=5) # will retry after 5min after failure/retry
 }
 
 # Directed Acyclic Graph (DAG)
@@ -41,7 +44,7 @@ dag_default_args = {
 with DAG(dag_id='jammu_weather',
             default_args=dag_default_args,
             schedule_interval='@hourly',
-            catchup=False) as dags:
+            catchup=False,) as dags:
     
     @task()
     def extract_jammu_weather():
