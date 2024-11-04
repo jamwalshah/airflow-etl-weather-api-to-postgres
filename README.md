@@ -3,15 +3,24 @@
 ## Table of Contents
 
 - [Description](#description)
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Monitoring and Troubleshooting](#monitoring-and-troubleshooting)
+- [Contribution](#contribution)
 - [License](#license)
 - [Contact](#contact)
 
 ## Description
 
 - This project sets up an ETL (Extract, Transform, Load) pipeline with a schedule that pulls weather data from a public Weather API and stores it in a PostgreSQL database. The pipeline is orchestrated using Apache Airflow, allowing for scheduled and reliable data processing. It uses airflow, so it is effectively a use case of batch data processing.
+
+## Features
+
+- **Scheduled Batch Processing:** Automatically pulls current weather data on an hourly schedule
+- **Error Handling:** Logs errors and retries on failure to ensure data integrity
+- **Structured Storage:**  Saves data in a well-defined schema in PostgreSQL for efficient querying
+- **Scalability:** Easily extendable to enterprise-grade processing, implementing Astronomer using Airflow to incorporate more data sources/sinks
 
 ## Installation
 
@@ -128,6 +137,10 @@ To monitor the DAG (or pipeline), you can open the DAG by clicking on its name. 
   > You may open the Event logs for the failing DAG run to troubleshoot the issues, and you may select one task and then view the task specific logs for better debugging.
 
   ![DAG_detailed_view](assets/images/DAG_detailed_view.png)
+
+## Contribution
+
+If you'd like to contribute to this project, please fork the repository and submit a pull request. Feel free to open issues for any bugs or feature requests!
 
 ## License
 
